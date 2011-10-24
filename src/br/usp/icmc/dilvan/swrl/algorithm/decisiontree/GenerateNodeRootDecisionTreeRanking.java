@@ -67,7 +67,7 @@ public class GenerateNodeRootDecisionTreeRanking implements GenerateNodeRootDeci
 			}
 
 			Collections.sort(listAnt, comparador);
-			rulesTree.addRule(listAnt, rule.getConsequent());
+			rulesTree.addRule(listAnt, rule.getConsequent(), rule.getNameRule());
 		}
 	}
 

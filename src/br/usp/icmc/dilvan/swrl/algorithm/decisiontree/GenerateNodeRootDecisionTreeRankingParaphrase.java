@@ -65,7 +65,7 @@ public class GenerateNodeRootDecisionTreeRankingParaphrase implements GenerateNo
 			}
 
 			Collections.sort(listAnt, comparador);
-			rulesTree.addRule(listAnt, rule.getConsequentParaphrase());
+			rulesTree.addRule(listAnt, rule.getConsequentParaphrase(), rule.getNameRule());
 		}
 	}
 

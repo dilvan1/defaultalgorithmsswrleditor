@@ -4,8 +4,8 @@ package br.usp.icmc.dilvan.swrl.algorithm.decisiontree;
 import java.util.List;
 
 import br.usp.icmc.dilvan.swrlEditor.client.rpc.swrleditor.decisiontree.NodeDecisionTree;
-import br.usp.icmc.dilvan.swrlEditor.client.rpc.swrleditor.decisiontree.NodeDecisionTreeRanking;
 import br.usp.icmc.dilvan.swrlEditor.client.rpc.swrleditor.decisiontree.NodeDecisionTree.ATOM_TYPE;
+import br.usp.icmc.dilvan.swrlEditor.client.rpc.swrleditor.decisiontree.NodeDecisionTreeRanking;
 import br.usp.icmc.dilvan.swrlEditor.client.rpc.swrleditor.rule.Atom;
 import br.usp.icmc.dilvan.swrlEditor.client.rpc.swrleditor.rule.Atom.TYPE_ATOM;
 
@@ -22,7 +22,7 @@ public class RulesInTreeRanking {
 		this.root.setAtomType(ATOM_TYPE.ROOT);
 	}
 
-	public void addRule(List<OccurrenceAtom> antecedent, List<Atom> consequent){
+	public void addRule(List<OccurrenceAtom> antecedent, List<Atom> consequent, String ruleName){
 		
 		int i = 0, j, k;
 		NodeDecisionTreeRanking nodeTemp = this.root;
@@ -64,7 +64,7 @@ public class RulesInTreeRanking {
 				
 		node.setValue(NodeDecisionTreeRanking.CONSEQUENT_VALUE);
 		node.setAtomType(ATOM_TYPE.CONSEQUENT);
-		
+		node.setRuleName(ruleName);
 	
 		nodeTemp.addChildNodes(node);
 		nodeTemp = (NodeDecisionTreeRanking) nodeTemp.getChildren().get(nodeTemp.getChildren().size()-1);

@@ -4,8 +4,8 @@ package br.usp.icmc.dilvan.swrl.algorithm.decisiontree;
 import java.util.List;
 
 import br.usp.icmc.dilvan.swrlEditor.client.rpc.swrleditor.decisiontree.NodeDecisionTree;
-import br.usp.icmc.dilvan.swrlEditor.client.rpc.swrleditor.decisiontree.NodeDecisionTreeRanking;
 import br.usp.icmc.dilvan.swrlEditor.client.rpc.swrleditor.decisiontree.NodeDecisionTree.ATOM_TYPE;
+import br.usp.icmc.dilvan.swrlEditor.client.rpc.swrleditor.decisiontree.NodeDecisionTreeRanking;
 
 
 public class RulesInTreeRankingParaphrase {
@@ -20,7 +20,7 @@ public class RulesInTreeRankingParaphrase {
 		this.root.setAtomType(ATOM_TYPE.ROOT);
 	}
 
-	public void addRule(List<OccurrenceParaphrase> antecedent, String consequent){
+	public void addRule(List<OccurrenceParaphrase> antecedent, String consequent, String ruleName){
 		
 		int i = 0, j, k;
 		NodeDecisionTreeRanking nodeTemp = this.root;
@@ -63,6 +63,7 @@ public class RulesInTreeRankingParaphrase {
 				
 		node.setValue(NodeDecisionTreeRanking.CONSEQUENT_VALUE);
 		node.setAtomType(ATOM_TYPE.CONSEQUENT);
+		node.setRuleName(ruleName);
 		
 	
 		nodeTemp.addChildNodes(node);

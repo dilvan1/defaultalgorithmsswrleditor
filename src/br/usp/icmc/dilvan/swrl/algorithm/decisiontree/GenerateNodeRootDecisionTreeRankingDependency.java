@@ -78,7 +78,7 @@ public class GenerateNodeRootDecisionTreeRankingDependency implements GenerateNo
 			}
 
 			Collections.sort(listAnt, comparadorOcurrAtom);
-			rulesTree.addRule(listAnt, rule.getConsequent());
+			rulesTree.addRule(listAnt, rule.getConsequent(), rule.getNameRule());
 		}
 
 	}
