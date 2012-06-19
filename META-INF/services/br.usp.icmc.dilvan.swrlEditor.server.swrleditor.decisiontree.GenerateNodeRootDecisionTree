@@ -1,3 +1,4 @@
 br.usp.icmc.dilvan.swrl.algorithm.decisiontree.GenerateNodeRootDecisionTreeRanking
 br.usp.icmc.dilvan.swrl.algorithm.decisiontree.GenerateNodeRootDecisionTreeRankingDependency
 br.usp.icmc.dilvan.swrl.algorithm.decisiontree.GenerateNodeRootDecisionTreeRankingParaphrase
+br.usp.icmc.dilvan.swrl.algorithm.decisiontree.GenerateNodeRootDecisionTreeNameRule

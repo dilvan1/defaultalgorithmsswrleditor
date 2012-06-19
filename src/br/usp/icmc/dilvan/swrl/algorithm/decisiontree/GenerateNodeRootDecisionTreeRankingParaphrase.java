@@ -16,7 +16,7 @@ import edu.stanford.smi.protegex.owl.swrl.model.SWRLFactory;
 public class GenerateNodeRootDecisionTreeRankingParaphrase implements GenerateNodeRootDecisionTree {
 	private RuleSet rules;
 
-	private static RulesInTreeRankingParaphrase rulesTree;
+	private RulesInTreeRankingParaphrase rulesTree;
 
 	public GenerateNodeRootDecisionTreeRankingParaphrase() {
 		super();

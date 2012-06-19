@@ -22,7 +22,7 @@ public class GenerateNodeRootDecisionTreeRankingDependency implements GenerateNo
 
 	private RuleSet rules;
 
-	private static RulesInTreeRanking rulesTree;
+	private RulesInTreeRanking rulesTree;
 
 	public GenerateNodeRootDecisionTreeRankingDependency() {
 		super();
