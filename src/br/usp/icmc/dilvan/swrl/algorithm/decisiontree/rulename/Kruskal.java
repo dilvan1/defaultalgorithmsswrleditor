@@ -6,23 +6,25 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.TreeSet;
 
+
+// Algoritmo de Kruskal, baseaddo em http://www.cs.columbia.edu/~gskc/Code/AdvancedInternetServices/MinimalSpanningTree/Kruskal.java
 public class Kruskal {
 	private int max_nodes = 0;
+	@SuppressWarnings("rawtypes")
 	private HashSet nodes[];               // Array of connected components
-	private TreeSet allEdges;              // Priority queue of Edge objects
+	private TreeSet<Aresta> allEdges;              // Priority queue of Edge objects
 	private List<Aresta> allNewEdges;            // Edges in Minimal-Spanning Tree
 
+	// Construtor
 	public Kruskal(int max_nodes) {
-		// Constructor
+		
 		this.max_nodes = max_nodes;
 		nodes = new HashSet[max_nodes];      // Create array for components
-		allEdges = new TreeSet(new Aresta());  // Create empty priority queue
+		allEdges = new TreeSet<Aresta>(new Aresta());  // Create empty priority queue
 		allNewEdges = new ArrayList<Aresta>(); // Create vector for MST edges
 	}
 	public void adicionaAresta(int from,int to, int cost){
 
-		//System.out.println("criou aresta: ("+ from + ", " + to +") com "+ cost);
-		
 		allEdges.add(new Aresta(from, to, cost));  // Update priority queue
 		if (nodes[from] == null) {
 			// Create set of connect components [singleton] for this node
@@ -44,19 +46,19 @@ public class Kruskal {
 			if (allEdges.remove(curEdge)) {
 				// successful removal from priority queue: allEdges
 
-				if (nodesAreInDifferentSets(curEdge.from, curEdge.to)) {
+				if (nodesAreInDifferentSets(curEdge.getFrom(), curEdge.getTo())) {
 					// System.out.println("Nodes are in different sets ...");
 					HashSet src, dst;
 					int dstHashSetIndex;
 
-					if (nodes[curEdge.from].size() > nodes[curEdge.to].size()) {
+					if (nodes[curEdge.getFrom()].size() > nodes[curEdge.getTo()].size()) {
 						// have to transfer all nodes including curEdge.to
-						src = nodes[curEdge.to];
-						dst = nodes[dstHashSetIndex = curEdge.from];
+						src = nodes[curEdge.getTo()];
+						dst = nodes[dstHashSetIndex = curEdge.getFrom()];
 					} else {
 						// have to transfer all nodes including curEdge.from
-						src = nodes[curEdge.from];
-						dst = nodes[dstHashSetIndex = curEdge.to];
+						src = nodes[curEdge.getFrom()];
+						dst = nodes[dstHashSetIndex = curEdge.getTo()];
 					}
 
 					Object srcArray[] = src.toArray();
@@ -94,7 +96,7 @@ public class Kruskal {
 	
 	public void imprimaArestas() {
 		for (Aresta e: allNewEdges)
-			System.out.println("-Nodes: (" + e.from + ", " + e.to + ") with cost: " + e.cost);
+			System.out.println("-Nodes: (" + e.getFrom() + ", " + e.getTo() + ") with cost: " + e.getCost());
 	}
 	
 	public List<Aresta> getArestas() {

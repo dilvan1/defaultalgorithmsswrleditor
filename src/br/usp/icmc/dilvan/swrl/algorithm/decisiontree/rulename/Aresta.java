@@ -3,13 +3,12 @@ package br.usp.icmc.dilvan.swrl.algorithm.decisiontree.rulename;
 import java.util.Comparator;
 
 
-public class Aresta implements Comparator{
-			public int from, to, cost;
+public class Aresta implements Comparator<Object>{
+			private int from, to, cost;
 			
 			public Aresta() {}
 			
 			public Aresta(int f, int t, int c) {
-				// Inner class constructor
 				from = f; 
 				to = t; 
 				cost = c;
@@ -24,8 +23,7 @@ public class Aresta implements Comparator{
 				int to1   = ((Aresta) o1).to;
 				int to2   = ((Aresta) o2).to;
 
-				//‡rvore m‡xima
-				/*if (cost2<cost1)
+				if (cost2<cost1)
 					return(-1);
 				else if (cost1==cost2 && from1==from2 && to1==to2)
 					return(0);
@@ -34,26 +32,36 @@ public class Aresta implements Comparator{
 				else if (cost2>cost1)
 					return(1); 
 				else
-					return(0);*/
-
-				
-				// ‡rvore minima
-				if (cost1<cost2)
-					return(-1);
-				else if (cost1==cost2 && from1==from2 && to1==to2)
-					return(0);
-				else if (cost1==cost2)
-					return(-1);
-				else if (cost1>cost2)
-					return(1); 
-				else
 					return(0);
 
 
 			}
 			public boolean equals(Object obj) {
-				// Used for comparisions during add/remove operations
 				Aresta e = (Aresta) obj;
 				return (cost==e.cost && from==e.from && to==e.to);
+			}
+
+			public int getFrom() {
+				return from;
+			}
+
+			public void setFrom(int from) {
+				this.from = from;
+			}
+
+			public int getTo() {
+				return to;
+			}
+
+			public void setTo(int to) {
+				this.to = to;
+			}
+
+			public int getCost() {
+				return cost;
+			}
+
+			public void setCost(int cost) {
+				this.cost = cost;
 			}
 }

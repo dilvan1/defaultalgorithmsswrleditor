@@ -21,7 +21,6 @@
 	<classpathentry kind="lib" path="/wpswrleditor2/war/WEB-INF/lib/commons-lang-2.0.jar"/>
 	<classpathentry kind="lib" path="/wpswrleditor2/war/WEB-INF/lib/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="lib" path="/wpswrleditor2/war/WEB-INF/lib/concurrent.jar"/>
-	<classpathentry kind="lib" path="/wpswrleditor2/war/WEB-INF/lib/defaultAlgorithmsSwrleditor.jar"/>
 	<classpathentry kind="lib" path="/wpswrleditor2/war/WEB-INF/lib/edtftpj-1.5.2.jar"/>
 	<classpathentry kind="lib" path="/wpswrleditor2/war/WEB-INF/lib/ekitspell.jar"/>
 	<classpathentry kind="lib" path="/wpswrleditor2/war/WEB-INF/lib/gwt-crypto-1.0.3.jar"/>
